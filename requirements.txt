@@ -1,0 +1,25 @@
+# Python 3.11 (tested on 3.11.15)
+
+# NOT covered by pip - install separately:
+#   - COLMAP (colmap.exe) + a vocab tree .bin  -> https://colmap.github.io/
+#     (00_vedio3_prep.py calls the COLMAP CLI directly; pycolmap below only reads its output)
+#   - CUDA-enabled torch/torchvision if you want GPU acceleration for the SAM segmentation
+#     steps (01/01b), e.g.:
+#       pip install torch==2.11.0 torchvision==0.26.0 --extra-index-url https://download.pytorch.org/whl/cu128
+#     the plain entries below install CPU-only wheels from PyPI.
+
+numpy==1.26.4
+opencv-python==4.11.0.86
+pillow==11.3.0
+matplotlib==3.10.9
+scipy==1.17.1
+scikit-learn==1.9.0
+tqdm==4.67.3
+pycolmap==4.0.4
+torch==2.11.0
+torchvision==0.26.0
+transformers==5.12.1
+
+# optional: convex decomposition in 06_tree_convex_decomp.py falls back to
+# KMeans+ConvexHull automatically if this isn't installed
+coacd==1.0.11
